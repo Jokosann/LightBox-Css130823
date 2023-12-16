@@ -1,0 +1,182 @@
+@font-face {
+	font-family: "fontQ";
+	src: url(./font/KaushanScript-Regular.otf) format(truetype);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "fontQ";
+	line-height: 5rem;
+	background-color: #666;
+}
+
+h1 {
+	font-size: 4rem;
+	text-align: center;
+	margin: 50px 0;
+}
+
+.container {
+	max-width: 600px;
+	background-color: #333;
+	margin: 0 auto;
+	border-radius: 20px;
+	box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow: hidden;
+	padding: 10px;
+}
+
+.gallery {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	margin: 10px;
+	overflow: hidden;
+	position: relative;
+	background-color: #333;
+	border: 2px solid lightblue;
+}
+
+.gallery a ._image {
+	width: 200px;
+	height: 400px;
+	position: absolute;
+	left: -45px;
+	transition: 300ms;
+	transform: scale(1);
+}
+
+.gallery a span {
+	display: block;
+	font-family: nunito, Arial, Helvetica, sans-serif;
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 120px;
+	background-color: rgba(200, 200, 200, 0.5);
+	opacity: 0;
+	transition: 300ms;
+	transform: scale(1);
+}
+
+.gallery a:hover ._image,
+.gallery a:hover span {
+	transform: scale(1.1);
+	opacity: 1;
+}
+
+/* overley */
+.overley {
+	width: 0;
+	height: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1;
+	overflow: hidden;
+	display: flex;
+	transition: 500ms;
+}
+
+.overley:target {
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	width: auto;
+	height: auto;
+}
+
+.overley .close {
+	text-decoration: none;
+	position: absolute;
+	font-size: 2rem;
+	top: 30px;
+	left: 50%;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	opacity: 0;
+}
+
+.overley:target .close {
+	animation: close 300ms forwards;
+}
+
+.overley .__image {
+	width: 250px;
+	height: 500px;
+	margin: auto;
+	background-color: #666;
+	border-radius: 10px;
+	box-shadow: inset 1px 1px 2px white, inset -1px -1px 2px white;
+}
+
+.overley:target .__image {
+	animation: image 500ms;
+}
+
+.prev {
+	position: absolute;
+	left: 480px;
+	top: 40%;
+}
+
+.next-prev-image {
+	width: 50px;
+	height: 50px;
+	background-color: #666;
+	border-radius: 10px;
+	box-shadow: inset 0 0 2px white, inset 0 0 2px white;
+}
+
+.next {
+	position: absolute;
+	right: 480px;
+	top: 40%;
+}
+
+@keyframes image {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes close {
+	0% {
+		opacity: 0;
+		margin-top: -20px;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.container {
+		width: calc(100vw - 4rem);
+		flex-wrap: wrap;
+		align-content: flex-start;
+	}
+}
+@media screen and (max-width: 365px) {
+	.container {
+		width: calc(100vw - 4rem);
+		justify-content: center;
+	}
+}
