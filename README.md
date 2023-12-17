@@ -1,6 +1,6 @@
-# Personal Portofolio
+# Light Box
 
-A brief description of what this project does and I used  HTML and CSS to create an light box but we haven't made it responsive yet. and this is my first project 😊😂
+A brief description of what this project does and I used HTML and CSS to create an light box but we haven't made it responsive yet. and this is my first project 😊😂
 
 ## Srceenshot
 
